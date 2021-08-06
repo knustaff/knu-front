@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Lato", sans-serif;
+}
+.nav {
+	background-color: #36384C;
+	height: 80px;
+	padding-left: 200px;
+	
+}
+
+.content,.footer {
+	background-color: #E9DCCD;
+	position: relative;
+}
+.nav ul li{
+	display: inline;
+	padding: 0 30px;
+	color: white;
+	font-size: 18px;
+}
+.nav img{
+	float: left;
+	padding-left: 125px;
+}
+.nav ul{
+	float: right;
+	padding-top: 30px;
+	padding-right: 125px;
+}
+.banner1{
+	background-image: url("coffee-983955_1920.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 600px;
+	text-align: center;
+	position: sticky;
+}
+.banner1 h1{
+	color: white;
+	font-size: 100px;
+	padding-top: 200px;
+}
+.banner1 h2{
+	color: white;
+	font-size: 25px;
+	padding-top: 20px;
+}
+.anh1 {
+	background-image: url("anh1.jpg");
+}
+.anh2 {
+	background-image: url("anh2.jpg");
+}
+.anh3 {
+	background-image: url("anh3.jpg");
+}
+.anh4 {
+	background-image: url("anh4.jpg");
+}
+.itemanh {
+	width: 20%;
+	height: 100%;
+}
+.content2 img{
+	height: 170px;
+	width: 20%;
+	position: relative;
+}
+.content2-images {
+	text-align: center;
+}
+.content2 {
+	height: 380px;
+	position: relative;
+	padding-top: 5%;
+}
+.content2 p{
+	padding: 3% 0;
+}
+.content3 {
+	background-color: #36384C;
+	position: relative;
+	color: white;
+	padding-top: 5%;
+	height: 580px;
+}
+.content3 p{
+	padding: 3% 0;
+}
+.chuale2ben {
+	padding-right: 20%;
+	padding-left: 20%;
+}
+.content3 .bentrai {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.content3 .bentrai img{
+	height: 250px;
+	padding-top: 10px;
+}
+.content3 .benphai img{
+	height: 250px;
+	padding-top: 10px;
+}
+.content3 .drinklist {
+	padding-top: 10px;
+}
+
+.content3 .benphai{
+	text-align: center;
+	
+}
+.content4 img{
+	float: left;
+}
+.content4{
+	height: 420px;
+	padding-top: 5%;
+}
+.content4 h2,h3{
+	padding: 10px 0 0 20px;
+}
+.maptrai{
+	background-image: url("map.png");
+	background-size: cover;
+	height: 300px;
+	float: left;
+	width: 50%;
+}
+.content4hours{
+	float: right;
+	width: 50%;
+}
+.footer h5{
+	text-align: center;
+	padding-bottom: 10px;
+}
+	
