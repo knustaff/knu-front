@@ -1,144 +1,160 @@
 @charset "utf-8";
-/* CSS Document */
 *{
 	padding: 0;
 	margin: 0;
 	font-family: "Lato", sans-serif;
 }
-.nav {
-	background-color: #36384C;
-	height: 80px;
-	padding-left: 200px;
-	
-}
-
-.content,.footer {
+.content {
 	background-color: #E9DCCD;
 	position: relative;
 }
-.nav ul li{
-	display: inline;
-	padding: 0 30px;
-	color: white;
-	font-size: 18px;
+.nav {
+	background-color: #030303;
+	height: 90px;
+	padding-left: 100px;
+	padding-top: 10px
 }
 .nav img{
-	float: left;
-	padding-left: 125px;
+	float: top;
+	padding-left: 70px;
+	background-size: 60px;
+}
+.nav ul li{
+	color: white;
+	display: inline;
+	font-size: 20px;
+	padding: 0 25px;	
 }
 .nav ul{
 	float: right;
 	padding-top: 30px;
-	padding-right: 125px;
+	padding-right: 120px;
 }
-.banner1{
-	background-image: url("coffee-983955_1920.jpg");
+.banner{
+	background-image: url("banner-vcs.jpg");
 	background-size: cover;
 	background-position: center;
-	height: 600px;
+	height: 745px;
+}
+.doituyen h2{
 	text-align: center;
-	position: sticky;
+	font-size: 70px;
+	color: #C8630B;
+	font-family: 'Chakra Petch', sans-serif;
 }
-.banner1 h1{
-	color: white;
-	font-size: 100px;
-	padding-top: 200px;
+.doituyen h3{
+	text-align: center;
+	font-size: 45px;
+	font-family: 'Chakra Petch', sans-serif;
 }
-.banner1 h2{
-	color: white;
-	font-size: 25px;
+.textteam {
 	padding-top: 20px;
 }
-.anh1 {
-	background-image: url("anh1.jpg");
+.logoteam {
+	padding-top: 30px;
 }
-.anh2 {
-	background-image: url("anh2.jpg");
-}
-.anh3 {
-	background-image: url("anh3.jpg");
-}
-.anh4 {
-	background-image: url("anh4.jpg");
-}
-.itemanh {
-	width: 20%;
-	height: 100%;
-}
-.content2 img{
-	height: 170px;
-	width: 20%;
-	position: relative;
-}
-.content2-images {
+.logoteam-pin1{
 	text-align: center;
 }
-.content2 {
-	height: 380px;
-	position: relative;
-	padding-top: 5%;
-}
-.content2 p{
-	padding: 3% 0;
-}
-.content3 {
-	background-color: #36384C;
-	position: relative;
-	color: white;
-	padding-top: 5%;
-	height: 580px;
-}
-.content3 p{
-	padding: 3% 0;
-}
-.chuale2ben {
-	padding-right: 20%;
-	padding-left: 20%;
-}
-.content3 .bentrai {
-	width: 50%;
-	float: left;
+.logoteam-pin2{
 	text-align: center;
 }
-.content3 .bentrai img{
-	height: 250px;
-	padding-top: 10px;
+.tendoituyen{
+	display: inline;
 }
-.content3 .benphai img{
-	height: 250px;
-	padding-top: 10px;
+.doituyen{
+	padding: 20px 0 100px 0;
 }
-.content3 .drinklist {
-	padding-top: 10px;
-}
-
-.content3 .benphai{
-	text-align: center;
-	
-}
-.content4 img{
-	float: left;
-}
-.content4{
-	height: 420px;
-	padding-top: 5%;
-}
-.content4 h2,h3{
-	padding: 10px 0 0 20px;
-}
-.maptrai{
-	background-image: url("map.png");
+.livestream {
+	background-image: url("banner-stream.jpg");
 	background-size: cover;
-	height: 300px;
-	float: left;
-	width: 50%;
+	background-position: center;
+	height: 800px;
 }
-.content4hours{
-	float: right;
-	width: 50%;
+.livestream h3{
+	color: #C8630B;
+	padding-top: 130px;
+	font-size: 60px;
+	font-family: 'Chakra Petch', sans-serif;
 }
-.footer h5{
+.livestream p{
+	color: white;
+	font-size: 18px;
+	font-family: 'Chakra Petch', sans-serif;
+}
+.canle {
+	padding-right: 15%;
+	padding-left: 15%;
+}
+.vetvlive {
+	padding-top: 10px;
+}
+.livestream h4{
+	color: white;
+	display: inline;
+}
+.logoyt{
+	padding-top: 15px;
+}
+.Standing{
+	padding-top: 100px;
+	height: 550px;
+}
+	.top1{
 	text-align: center;
-	padding-bottom: 10px;
+	float: left;	
+	}
+	.Standing h4{
+	font-size: 60px;
+	font-family: 'Chakra Petch', sans-serif;
+	color: #C8630B
+	}
+	.Standing, .top1-name{
+	font-size: 40px;
+	font-family: 'Chakra Petch', sans-serif;
+	color: #C8630B
+	}
+.top2-8{
+	text-align: right;
+	float: right;
 }
+	.standing-text{
+	text-align: right;
+	color: #C8630B;
+	padding-top: 30px;
+	font-size: 60px;
+	font-family: 'Chakra Petch', sans-serif;
+}
+	.Standing, .s-rank{
+	color: #000000;
+	padding-top: 5px;
+	font-size: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+}
+.top2-8 hr{
+	color: black;
+	size: 5px;
+}
+.top2-8 h5{
+	font-size: 15px;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #c8630b;
+}
+.footer {
+	background-color: #030303;
+	position: relative;
+	height: 200px;
+}
+.logo-riotxgarena{
+	padding-top: 80px;
+	float: left;	
+}
+.information{
+	padding-top: 60px;
+	text-align: right;
+}
+.footer p{
+	font-size: 10px;
+	color: white;
 	
+}
