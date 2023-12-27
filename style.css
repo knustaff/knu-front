@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #fff;
+}
+@media only screen and (max-width:1199px) {}
+@media only screen and (max-width:991px) {}
+@media only screen and (max-width:767px) {}
+@media only screen and (max-width:575px) {}
+.text-header{
+	font-size: 25px;
+	font-weight: 700;
+	padding: 20 0;
+}
+
+.card-price {
+	font-size: 20px;
+	font-weight: 600;
+	color: #ff7634;{
+		
+	}
+	
+}
+.countdownp {
+  text-align: center;
+  font-size: 25px;
+  vertical-align: center;
+  font-weight: 600;
+
+}
+
+.imgspcrop{
+	height:150px;
+	object-fit: cover;
+}
+.card-title{
+	font-size: 20px;
+	
+	
+}
+.card-text{
+	font-size: 13px;
+	color:#121212;
+}
+.btn{
+	color: #ffffff;
+	background-color: #ff7634;
+}
+.btn-primary{
+	font-size:12px;
+}
+.container-banner1{
+	margin: 0 auto;
+	width: 1200px;
+	align-items: center;
+}

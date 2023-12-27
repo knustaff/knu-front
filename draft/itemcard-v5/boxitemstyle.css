@@ -1,0 +1,214 @@
+.component {
+  position: relative;
+  width: 265px;
+  height: 422px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #d9d9d9;
+}
+
+.component .img-top {
+  position: absolute;
+  width: 235px;
+  height: 235px;
+  top: 12px;
+  left: 13px;
+  background-image: url(./img/rectangle-8.svg);
+  background-size: 100% 100%;
+}
+
+.component .item-title{
+  position: absolute;
+  width: 235px;
+  top: 251px;
+  left: 13px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.component .overlap {
+  position: absolute;
+  width: 98px;
+  height: 44px;
+  top: 295px;
+  left: 15px;
+}
+
+.component .item-subprice {
+  top: 0;
+  font-weight: 500;
+  color: #d9d9d9;
+  font-size: 16px;
+  text-decoration: line-through;
+  position: absolute;
+  left: 0;
+  font-family: "Montserrat", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.component .item-price {
+  top: 16px;
+  font-weight: 600;
+  color: #ff7634;
+  font-size: 23px;
+  position: absolute;
+  left: 0;
+  font-family: "Montserrat", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.component .overlap-group {
+  position: absolute;
+  width: 125px;
+  height: 24px;
+  top: 343px;
+  left: 125px;
+  background-color: #ff7634;
+  border-radius: 20px;
+}
+
+.component .item-tag2{
+  position: absolute;
+  width: 84px;
+  top: 3px;
+  left: 35px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.component .tag {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 4px;
+  left: 12px;
+}
+
+.component .overlap-group-2 {
+  position: absolute;
+  width: 105px;
+  height: 24px;
+  top: 343px;
+  left: 15px;
+  background-color: #ff7634;
+  border-radius: 20px;
+}
+
+.component .item-tag1 {
+  position: absolute;
+  width: 52px;
+  top: 3px;
+  left: 36px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.component .img {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 4px;
+  left: 13px;
+}
+
+.component .productsell {
+  position: absolute;
+  top: 393px;
+  left: 13px;
+  font-family: "Montserrat", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.component .span {
+  font-weight: 600;
+}
+
+.component .text-wrapper-4 {
+  font-family: "Montserrat", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.component .frame {
+  position: absolute;
+  width: 106px;
+  height: 18px;
+  top: 371px;
+  left: 13px;
+}
+
+.component .group-2 {
+  position: relative;
+  height: 18px;
+}
+
+.component .star-fill {
+  left: 44px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.component .star-fill-2 {
+  left: 66px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.component .star-fill-3 {
+  left: 22px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.component .star-fill-4 {
+  left: 0;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.component .star-half {
+  left: 88px;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+}
+
+.component .cart-plus {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 375px;
+  left: 216px;
+}
