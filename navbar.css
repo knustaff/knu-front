@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* navbar.css 
+Client: KIM & YOU JSC
+Agency: KnU MKT
+PM: Tran Diep Anh
+Author: @_vipooo_ /frontend/
+		@vietanh /backend/
+*/
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+.navbar{
+	background-color: #fff;
+	height: 80px;
+}
+.navbar-brand img{
+	width: 115px;	
+}
+.offcanvas-title img{
+	width: 115px;
+}
+.login-button{
+	background-color: #fff;
+	color: #ff7634;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 8px 17px;
+	border-radius: 50px;
+	border: 2px solid #ff7634;
+	text-decoration: none;
+	transition: 0.3s background-color;	
+	
+}
+.login-button:hover{
+	color: #fff;
+	background-color: #ff7634;
+}
+.navbar-toggler{
+	border: none;
+	font-size: 1.25rem;
+}
+.navbar-toggler:focus, .btn-close:focus{
+	box-shadow: none;
+	outline: none;	
+}
+.nav-item{
+	font-size: 17px;
+	font-weight: 600;
+}
+.nav-link{
+	color: #666777;
+	font-weight: 700;
+	position: relative;
+}
+.nav-link:hover, .nav-link:active{
+	color: #000;
+	
+}
+@media (min-width: 991px) {
+	.nav-link::before{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0%;
+		height: 2px;
+		background-color: #ff7634;
+		visibility: hidden;
+		transition: 0.3s ease-in-out;
+	}
+	.nav-link:hover::before, .nav-link.active::before{
+	width: 100%;
+	visibility: visible;
+	}
+}
