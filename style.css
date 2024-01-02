@@ -9,6 +9,10 @@ Author: @_vipooo_ /frontend/
 *{
 	font-family: 'Montserrat', sans-serif;
 }
+.p-5{
+	height: 500px;
+
+}
 .navbar{
 	background-color: #fff;
 	height: 80px;
@@ -74,3 +78,29 @@ Author: @_vipooo_ /frontend/
 	visibility: visible;
 	}
 }
+
+/*blog*/
+.thumbnail-blog img{
+	max-width: 100%;
+}
+.thumbnail-blog-small img{
+	max-width: 40%;
+	float: left;
+	margin-right: 10px;
+}
+.title-blog{
+	font-size: 16px;
+	font-weight: 600;
+}
+.partner{
+	justify-content: center;
+	text-align: center;
+}	
+.partner img{
+	max-width: 85%;
+
+}
+.mini-banner img{
+	max-width: 100%;
+}
+
