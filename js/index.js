@@ -114,7 +114,6 @@ async function checkLoggedIn() {
 
 async function addToCart() {
     const getAddToCartBtn = document.querySelectorAll('.knu-add-to-cart');
-    console.log('getAddToCartBtn', getAddToCartBtn)
     if(getAddToCartBtn && getAddToCartBtn.length) {
         getAddToCartBtn.forEach((btn) => {
             btn.addEventListener('click', async () => {
@@ -131,28 +130,22 @@ async function addToCart() {
                 });
                 const getProductRes = await getProductReq.json();
                 const productInfo = getProductRes;
+                const productObj = {
+                    productId: productInfo.id,
+                    productName: productInfo.productName,
+                    imageUrl: productInfo.imageUrl,
+                    quantity: 1,
+                    price: productInfo.price,
+                    totalPrice: productInfo.price
+                }
 
                 const cartInfo = JSON.parse(localStorage.getItem('cart-info'));
                 if(cartInfo) {
-                    cartInfo.push({
-                        productId: productInfo.id,
-                        productName: productInfo.productName,
-                        imageUrl: productInfo.imageUrl,
-                        quantity: 1,
-                        price: productInfo.price,
-                        totalPrice: productInfo.price
-                    });
-                    localStorage.setItem("cart-info", JSON.stringify(cartInfo));
+                    console.log('123456')
+                    updateCartData(productObj, cartInfo);
                 } else {
                     let cartInfo = [];
-                    cartInfo.push({
-                        productId: productInfo.id,
-                        productName: productInfo.productName,
-                        imageUrl: productInfo.imageUrl,
-                        quantity: 1,
-                        price: productInfo.price,
-                        totalPrice: productInfo.price
-                    });
+                    cartInfo.push(productObj);
                     localStorage.setItem("cart-info", JSON.stringify(cartInfo));
                 }
                 const cartData = localStorage.getItem('cart-info');
@@ -190,4 +183,20 @@ function hideAddToCartBtn(btnArray, check) {
 function convertCurrency(price) {
     const result = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
     return result;
+}
+
+function updateCartData(productObj, cartData) {
+    const findItem =  cartData.findIndex(function (product) {
+        return product.productId === productObj.productId;
+    });
+    console.log('cartData', cartData)
+    if(findItem >= 0) {
+        console.log('cartData[findItem]', cartData[findItem])
+        cartData[findItem].quantity++;
+        cartData[findItem].price = productObj.price;
+        cartData[findItem].totalPrice = cartData[findItem].quantity * productObj.price;
+    } else {
+        cartData.push(productObj);
+    }
+    localStorage.setItem("cart-info", JSON.stringify(cartData));
 }

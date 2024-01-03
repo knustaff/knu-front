@@ -18,28 +18,28 @@ function fillCart() {
         let cartData = JSON.parse(getCartInfo);
         console.log('cartData', cartData);
         const totalAmount = cartData.reduce(function (accumulator, product) {
-            return accumulator + product.price;
+            return accumulator + product.totalPrice;
         }, 0);
 
         cartData.forEach((product) => {
             content += `
-            <tr alt="spc-01" class="product-${product.id}">
-            <td>
-                <div class="cart-info">
-                    <img src="${product.imageUrl}" alt="sp007">						
-                </div>
-            </td>
-            <td>	
-                <div class="cart-name">
-                    <h7 class="cart-title">${product.productName}</h7>						
-                    <small>${convertCurrency(product.price)}</small>
-                    <br>
-                    <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                </div>
-            </td>
-            <td><input type="number" value="${product.quantity}"></td>
-            <td>${convertCurrency(product.totalPrice)}</td>
-        </tr>
+            <tr alt="spc-01">
+				<td>
+					<div class="cart-info">
+						<img src="${product.imageUrl}" alt="sp007">						
+					</div>
+				</td>
+				<td>	
+					<div class="cart-name">
+						<h7 class="cart-title">${product.productName}</h7>						
+						<small>${convertCurrency(product.price)}</small>
+						<br>
+						<a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+					</div>
+				</td>
+				<td><input type="number" value="${product.quantity}"></td>
+				<td>${convertCurrency(product.totalPrice)}</td>
+			</tr>
         `
         });
         content += `</table>`

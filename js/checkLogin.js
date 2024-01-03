@@ -57,6 +57,7 @@ async function getCartData(token) {
     });
     if(!getCartReq.ok) {
         console.log("The user has no cart data");
+        localStorage.removeItem('cart-info');
     } else {
         const getCartRes = await getCartReq.json();
     }
