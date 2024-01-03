@@ -180,9 +180,6 @@ Author: @_vipooo_ /frontend/
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-      #knu-list-products-by-category h1{
+      #knu-list-products-by-category .knu-categoty-title {
         text-transform: uppercase;
       }
-
-
-
