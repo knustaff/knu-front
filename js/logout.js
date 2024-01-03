@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
 function logout() {
     localStorage.removeItem('isLogin');
-    sessionStorage.removeItem('jwtToken');
+    localStorage.removeItem('jwtToken');
+    localStorage.removeItem('cart-info');
     window.location.reload();
 }

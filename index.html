@@ -51,9 +51,10 @@
 			</ul>			
 		  </div>
 		</div>
+		<a href="shopping-cart.html" class="bag-shopping"><i class="fa-solid fa-bag-shopping fa-xl"></i></a>
 		<a href="login.html" class="login-button">Đăng nhập</a>
 		<span id="knu-user-name" style="display: none;">Welcome</span>
-		<a href="#" class="logout-button" style="margin-left: 20px; visibility: hidden;">Đăng xuất</a>
+		<a href="#" class="logout-button" style="margin-left: 20px; display: none;">Đăng xuất</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -65,16 +66,28 @@
 		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
 		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
 	  </div>
 	  <div class="carousel-inner">
 		<div class="carousel-item active">
 		  <img src="img/banner/main33.jpg" class="d-block w-100" alt="...">
 		</div>
 		<div class="carousel-item">
-		  <img src="img/banner/main33.jpg" class="d-block w-100" alt="...">
+		  <img src="img/banner/main-10.jpg" class="d-block w-100" alt="...">
 		</div>
 		<div class="carousel-item">
-		  <img src="img/banner/main33.jpg" class="d-block w-100" alt="...">
+		  <img src="img/banner/main-11.jpg" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="img/banner/main-12.jpg" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="img/banner/main-13.jpg" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="img/banner/main-14.jpg" class="d-block w-100" alt="...">
 		</div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -649,9 +662,6 @@
 			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">TẤT CẢ</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">MENU TRẢI NGHIỆM</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
 			<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">MENU GIẢM CÂN</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
@@ -1031,15 +1041,19 @@
 	  <div class="container mt-5">
 		  <h2 class="pb-2 border-bottom">ĐỐI TÁC</h2>
 		  <div class="row mt-5">
-			  <div class="col-4 partner mt-3">
+			  <div class="col-1"></div>
+			  <div class="col-2 partner mt-3">
 			  	<img src="img/avt/logo-coopmart.png">
 			  </div>
-			  <div class="col-4 partner mt-3">
+			  <div class="col-2"></div>
+			  <div class="col-2 partner mt-3">
 			  	<img src="img/avt/logo-coopmart.png">
 			  </div>
-			  <div class="col-4 partner mt-3">
+			  <div class="col-2"></div>
+			  <div class="col-2 partner mt-3">
 			  	<img src="img/avt/logo-coopmart.png">
 			  </div>
+			  <div class="col-1"></div>
 		  </div>
 	  </div>
 	  
@@ -1047,13 +1061,13 @@
 		<div class="row">
 			<div class="col-6 mini-banner">
 				<div class="col-12 mt-1">
-					<img src="img/banner/main33.jpg">
+					<img src="img/banner/mini-1.jpg">
 				</div>
 				<div class="col-12 mt-2">
-					<img src="img/banner/main33.jpg">
+					<img src="img/banner/mini-2.jpg">
 				</div>
 				<div class="col-12 mt-2">
-					<img src="img/banner/main33.jpg">
+					<img src="img/banner/mini-3.jpg">
 				</div>
 				<div class="col-12 mt-2">
 					<img src="img/banner/main33.jpg">
@@ -1127,6 +1141,7 @@
   <!-- Script bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>	  
   <script src="./js/index.js"></script>
+  <script src="./js/checkLogin.js"></script>
   <script src="./js/logout.js"></script>
   </body>
 </html>

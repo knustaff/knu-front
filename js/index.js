@@ -1,27 +1,6 @@
 // Call the fetchData function when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     fetchDataFirstLoad();
-    const isLogin = JSON.parse(localStorage.getItem('isLogin'));
-    const loginBtn = document.querySelector('.login-button');
-    const logoutBtn = document.querySelector('.logout-button');
-    if (isLogin.expiration <= Date.now()) {
-        localStorage.removeItem('isLogin');
-        sessionStorage.removeItem('jwtToken');
-        if(loginBtn) {
-            loginBtn.style.visibility = 'visible';
-        }
-        if(logoutBtn) {
-            logoutBtn.style.visibility = 'hidden';
-        }
-    } else if(isLogin.value) {
-        if(loginBtn) {
-            loginBtn.style.visibility = 'hidden';
-        }
-        if(logoutBtn) {
-            logoutBtn.style.visibility = 'visible';
-        }
-        checkLoggedIn();
-    }
 });
 
 async function fetchDataFirstLoad() {
@@ -42,7 +21,7 @@ async function fetchDataFirstLoad() {
         // Parse the JSON data
         const data = await response.json();
 
-        getProductDataThenDisplay(data);
+        await getProductDataThenDisplay(data);
     } catch (error) {
         // Handle errors
         console.error('Error:', error);
@@ -52,7 +31,7 @@ async function fetchDataFirstLoad() {
 async function getProductDataThenDisplay(categories) {
     try {
         let content = ``;
-        categories.forEach(async (category) => {
+        categories.forEach(async (category, index) => {
             const getProducts = await fetch(`http://localhost:3000/product/category/${category.id}`, {
                 method: "GET",
                 headers: {
@@ -89,7 +68,7 @@ async function getProductDataThenDisplay(categories) {
 								    <i class="fa fa-star star mr-0"> 4/5</i>
 								    <div class="mb-1 text-soluong"><strong>155K</strong> đã bán</div>
 							    </div>
-							    <button type="button" class="btn">
+							    <button type="button" class="btn knu-add-to-cart" product-id="${product.id}">
 								    <i class="fa fa-cart-plus"></i>
 							    </button>
 						    </div>
@@ -100,16 +79,14 @@ async function getProductDataThenDisplay(categories) {
             });
             content += `</div></div>`
             document.getElementById("knu-list-products-by-category").innerHTML = content;
+            if(index === categories.length - 1) {
+                addToCart();
+            }
         });
 
     } catch (error) {
         console.log('error: ', error);
     }
-}
-
-function convertCurrency(price) {
-    const result = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-    return result;
 }
 
 async function checkLoggedIn() {
@@ -133,4 +110,84 @@ async function checkLoggedIn() {
             showUsername.style.display = 'block';
         }
     }
+}
+
+async function addToCart() {
+    const getAddToCartBtn = document.querySelectorAll('.knu-add-to-cart');
+    console.log('getAddToCartBtn', getAddToCartBtn)
+    if(getAddToCartBtn && getAddToCartBtn.length) {
+        getAddToCartBtn.forEach((btn) => {
+            btn.addEventListener('click', async () => {
+                hideAddToCartBtn(getAddToCartBtn, true);
+                setTimeout(() => {
+                    hideAddToCartBtn(getAddToCartBtn, false);
+                }, 2500);
+                const productId = btn.getAttribute('product-id');
+                const getProductReq = await fetch(`http://localhost:3000/product/${productId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const getProductRes = await getProductReq.json();
+                const productInfo = getProductRes;
+
+                const cartInfo = JSON.parse(localStorage.getItem('cart-info'));
+                if(cartInfo) {
+                    cartInfo.push({
+                        productId: productInfo.id,
+                        productName: productInfo.productName,
+                        imageUrl: productInfo.imageUrl,
+                        quantity: 1,
+                        price: productInfo.price,
+                        totalPrice: productInfo.price
+                    });
+                    localStorage.setItem("cart-info", JSON.stringify(cartInfo));
+                } else {
+                    let cartInfo = [];
+                    cartInfo.push({
+                        productId: productInfo.id,
+                        productName: productInfo.productName,
+                        imageUrl: productInfo.imageUrl,
+                        quantity: 1,
+                        price: productInfo.price,
+                        totalPrice: productInfo.price
+                    });
+                    localStorage.setItem("cart-info", JSON.stringify(cartInfo));
+                }
+                const cartData = localStorage.getItem('cart-info');
+                const reqData = {
+                    cartItemsString: cartData + ''
+                }
+                const createCartDataReq = await fetch('http://localhost:3000/cart/create-cart-info', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(reqData)
+                });
+
+                if(!createCartDataReq.ok) {
+                    alert('Fail to add the item into your shopping cart!');
+                } else {
+                    const createCartDataRes = await createCartDataReq.json();
+
+                    const cartData = createCartDataRes.cartItemsString;
+                    localStorage.setItem('cart-info', cartData);
+                }
+                
+            })
+        });
+    }
+}
+
+function hideAddToCartBtn(btnArray, check) {
+    btnArray.forEach((btn) => {
+        btn.style.display = check ? 'none' : 'block';
+    });
+}
+function convertCurrency(price) {
+    const result = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+    return result;
 }

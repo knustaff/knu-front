@@ -41,7 +41,7 @@ async function signup() {
     const registerRes = await register.json();
 
     const token = registerRes.access_token;
-    sessionStorage.setItem("jwtToken", token);
+    localStorage.setItem("jwtToken", token);
 
     const dataExpiration = {
         value: true,
