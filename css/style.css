@@ -9,6 +9,10 @@ Author: @_vipooo_ /frontend/
 *{
 	font-family: 'Montserrat', sans-serif;
 }
+.site-link{
+	margin-top: 12px;
+	font-size: 13px;
+}
 .p-5{
 	height: 500px;
 
