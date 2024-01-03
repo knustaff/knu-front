@@ -49,7 +49,9 @@
 		  </div>
 		</div>
 		<a href="shopping-cart.html" class="bag-shopping"><i class="fa-solid fa-bag-shopping fa-xl"></i></a>
-		<a href="login.html" class="login-button">Đăng nhập</a>		
+		<a href="login.html" class="login-button">Đăng nhập</a>
+		<span id="knu-user-name" style="display: none;">Welcome</span>
+		<a href="#" class="logout-button" style="margin-left: 20px; display: none;">Đăng xuất</a>		
 		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -81,15 +83,15 @@
 					<h4 class="payment-title">Thông tin nhận hàng</h4>
 					<div class="inputbox">
 						<span>Họ và tên: </span>
-						<input type="text" placeholder="Trần Văn A">
+						<input id="name" type="text" placeholder="Trần Văn A">
 					</div>
 					<div class="inputbox">
 						<span>Email: </span>	
-						<input type="email" placeholder="123@example.com">
+						<input id="email" type="email" placeholder="123@example.com">
 					</div>
 					<div class="inputbox">
 						<span>Số điện thoại: </span>	
-						<input type="tel" placeholder="0901000000" pattern="[0-9{10}]">						
+						<input id="phone" type="tel" placeholder="0901000000" pattern="[0-9{10}]">						
 					</div>
 					<div class="inputbox">
 						<span>Địa chỉ </span>						
@@ -108,15 +110,15 @@
 					</div>
 					<h4 class="payment-title" style="margin-top: 30px;">Phương thức vận chuyển</h4>					
 					<label class="container-radio">Hỏa tốc
-					  <input type="radio" name="radio">
+					  <input type="radio" name="radio" value="Hỏa tốc">
 					  <span class="checkmark"></span>
 					</label>
 					<label class="container-radio">Giao ưu tiên 4h
-					  <input type="radio" name="radio">
+					  <input type="radio" name="radio" value="Giao ưu tiên 4h">
 					  <span class="checkmark"></span>
 					</label>
 					<label class="container-radio">Giao trong vòng 24h
-					  <input type="radio" name="radio">
+					  <input type="radio" name="radio" value="Giao trong vòng 24h">
 					  <span class="checkmark"></span>
 					</label>					
 				</div>
@@ -129,7 +131,7 @@
 		</form>	
 	</div>
 	<div class="container cart-button">				
-		<button type="submit" class="payment-submit-btn" onclick="openPopup()">ĐẶT HÀNG</button>
+		<button type="submit" class="payment-submit-btn">ĐẶT HÀNG</button>
 		<div class="payment-popup" id="popup">
 			<img src="img/icon/success.png">
 			<h3>Hoàn tất đặt hàng</h3>
@@ -138,36 +140,27 @@
 			
 		</div>
 	</div>
-		
-	
-
-
-	<!--Popup in Payment -->
-	<script>
-	let popup = document.getElementById("popup");
-	
-	function openPopup(){
-		popup.classList.add("open-popup");
-	}
-	function closePopup(){
-		popup.classList.remove("open-popup");
-	}
-	</script>
 			
 	<!-- Script bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<!-- script mapvn -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script src="./js/checkLogin.js"></script>
+  <script src="./js/logout.js"></script>
+  <script src="./js/checkout.js"></script>
     <script>
     const host = "https://provinces.open-api.vn/api/";
 var callAPI = (api) => {
     return axios.get(api)
         .then((response) => {
-            renderData(response.data, "city");
+			const newData = response.data.filter((item) => {
+				return item.name == 'Thành phố Hồ Chí Minh' || item.name == 'Tỉnh Bình Dương';
+			});
+            renderData(newData, "city");
         });
 }
-callAPI('https://provinces.open-api.vn/api/?depth=1');
+callAPI(`https://provinces.open-api.vn/api/p/search/?q=hồ chí minh dương`);
 var callApiDistrict = (api) => {
     return axios.get(api)
         .then((response) => {

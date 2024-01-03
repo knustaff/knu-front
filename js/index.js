@@ -141,7 +141,6 @@ async function addToCart() {
 
                 const cartInfo = JSON.parse(localStorage.getItem('cart-info'));
                 if(cartInfo) {
-                    console.log('123456')
                     updateCartData(productObj, cartInfo);
                 } else {
                     let cartInfo = [];
@@ -189,9 +188,7 @@ function updateCartData(productObj, cartData) {
     const findItem =  cartData.findIndex(function (product) {
         return product.productId === productObj.productId;
     });
-    console.log('cartData', cartData)
     if(findItem >= 0) {
-        console.log('cartData[findItem]', cartData[findItem])
         cartData[findItem].quantity++;
         cartData[findItem].price = productObj.price;
         cartData[findItem].totalPrice = cartData[findItem].quantity * productObj.price;

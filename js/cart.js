@@ -6,6 +6,7 @@ function fillCart() {
     const getCartInfo = localStorage.getItem('cart-info');
     if(!getCartInfo || getCartInfo == '') {
         console.log('Cart empty');
+        alert('Cart empty');
     } else {
         let content = `<table>
         <tr>
@@ -16,7 +17,6 @@ function fillCart() {
         </tr>
         `;
         let cartData = JSON.parse(getCartInfo);
-        console.log('cartData', cartData);
         const totalAmount = cartData.reduce(function (accumulator, product) {
             return accumulator + product.totalPrice;
         }, 0);
