@@ -78,7 +78,7 @@ function handleDeleteItem() {
         const cartData = JSON.parse(localStorage.getItem('cart-info'));
         deleteCartItemBtn.forEach((btn) => {
             btn.addEventListener('click', () => {
-                const productId = Number.parseInt(input.getAttribute('knt-delete-item-id'));
+                const productId = Number.parseInt(btn.getAttribute('knt-delete-item-id'));
                 deleteCartItem(cartData, productId);
                 fillCart();
                 handleDeleteItem();
