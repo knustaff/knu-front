@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function fillCart() {
     const getCartInfo = localStorage.getItem('cart-info');
-    if(!getCartInfo || getCartInfo == '') {
+    if(!getCartInfo || getCartInfo == '' || !getCartInfo.length) {
         console.log('Cart empty');
         alert('Cart empty');
     } else {
@@ -67,6 +67,7 @@ function handleChangeQty() {
                 updateCartData(productId, cartData, quantity);
                 fillCart();
                 handleChangeQty();
+                handleDeleteItem();
             });
         });
     }
@@ -82,6 +83,7 @@ function handleDeleteItem() {
                 deleteCartItem(cartData, productId);
                 fillCart();
                 handleDeleteItem();
+                handleChangeQty();
             });
         });
     }
