@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function fetchDataFirstLoad() {
     try {
         // Make the API call using the fetch function
-        const response = await fetch('http://localhost:3000/category', {
+        const response = await fetch('https://knu-api.vercel.app/category', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ async function getProductDataThenDisplay(categories) {
     try {
         let content = ``;
         categories.forEach(async (category, index) => {
-            const getProducts = await fetch(`http://localhost:3000/product/category/${category.id}`, {
+            const getProducts = await fetch(`https://knu-api.vercel.app/product/category/${category.id}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ async function getProductDataThenDisplay(categories) {
 async function checkLoggedIn() {
     const getToken = sessionStorage.getItem('jwtToken');
     if(getToken) {
-        const getUser = await fetch('http://localhost:3000/users/me', {
+        const getUser = await fetch('https://knu-api.vercel.app/users/me', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${getToken}`,
@@ -122,7 +122,7 @@ async function addToCart() {
                     hideAddToCartBtn(getAddToCartBtn, false);
                 }, 2500);
                 const productId = btn.getAttribute('product-id');
-                const getProductReq = await fetch(`http://localhost:3000/product/${productId}`, {
+                const getProductReq = await fetch(`https://knu-api.vercel.app/product/${productId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ async function addToCart() {
                 const reqData = {
                     cartItemsString: cartData + ''
                 }
-                const createCartDataReq = await fetch('http://localhost:3000/cart/create-cart-info', {
+                const createCartDataReq = await fetch('https://knu-api.vercel.app/cart/create-cart-info', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,

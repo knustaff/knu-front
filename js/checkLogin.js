@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function checkLoggedIn() {
     const getToken = localStorage.getItem('jwtToken');
     if(getToken) {
-        const getUser = await fetch('http://localhost:3000/users/me', {
+        const getUser = await fetch('https://knu-api.vercel.app/users/me', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${getToken}`,
@@ -48,7 +48,7 @@ async function checkLoggedIn() {
 }
 
 async function getCartData(token) {
-    const getCartReq = await fetch('http://localhost:3000/cart', {
+    const getCartReq = await fetch('https://knu-api.vercel.app/cart', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,

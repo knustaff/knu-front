@@ -20,7 +20,7 @@ async function login() {
         password: password
     }
 
-    const register = await fetch('http://localhost:3000/auth/signin', {
+    const register = await fetch('https://knu-api.vercel.app/auth/signin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

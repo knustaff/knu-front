@@ -62,7 +62,7 @@ async function checkout() {
         totalAmount: totalAmount + shippingFee
     }
 
-    const createOrderReq = await fetch('http://localhost:3000/order', {
+    const createOrderReq = await fetch('https://knu-api.vercel.app/order', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
@@ -78,7 +78,7 @@ async function checkout() {
         cartData: cartData
     };
 
-    const createOrderDetailReq = await fetch('http://localhost:3000/order-detail', {
+    const createOrderDetailReq = await fetch('https://knu-api.vercel.app/order-detail', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
