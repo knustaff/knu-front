@@ -68,7 +68,7 @@ async function getProductDataThenDisplay(categories) {
 								    <i class="fa fa-star star mr-0"> 4/5</i>
 								    <div class="mb-1 text-soluong"><strong>155K</strong> đã bán</div>
 							    </div>
-							    <button type="button" class="btn knu-add-to-cart" product-id="${product.id}">
+							    <button type="button" class="btn knu-add-to-cart" product-id="${product.id}" onclick="addToCart(${product.id})">
 								    <i class="fa fa-cart-plus"></i>
 							    </button>
 						    </div>
@@ -79,9 +79,9 @@ async function getProductDataThenDisplay(categories) {
             });
             content += `</div></div>`
             document.getElementById("knu-list-products-by-category").innerHTML = content;
-            if(index === categories.length - 1) {
-                addToCart();
-            }
+            // if(index === categories.length - 1) {
+            //     addToCart();
+            // }
         });
 
     } catch (error) {
@@ -111,69 +111,60 @@ async function checkLoggedIn() {
         }
     }
 }
-
-async function addToCart() {
+async function addToCart(productId) {
     const getAddToCartBtn = document.querySelectorAll('.knu-add-to-cart');
-    if(getAddToCartBtn && getAddToCartBtn.length) {
-        getAddToCartBtn.forEach((btn) => {
-            btn.addEventListener('click', async () => {
-                hideAddToCartBtn(getAddToCartBtn, true);
-                setTimeout(() => {
-                    hideAddToCartBtn(getAddToCartBtn, false);
-                }, 2500);
-                const productId = btn.getAttribute('product-id');
-                const getProductReq = await fetch(`https://knu-api.vercel.app/product/${productId}`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                const getProductRes = await getProductReq.json();
-                const productInfo = getProductRes;
-                const productObj = {
-                    productId: productInfo.id,
-                    productName: productInfo.productName,
-                    imageUrl: productInfo.imageUrl,
-                    quantity: 1,
-                    price: productInfo.price,
-                    totalPrice: productInfo.price
-                }
-
-                const cartInfo = JSON.parse(localStorage.getItem('cart-info'));
-                if(cartInfo) {
-                    updateCartData(productObj, cartInfo);
-                } else {
-                    let cartInfo = [];
-                    cartInfo.push(productObj);
-                    localStorage.setItem("cart-info", JSON.stringify(cartInfo));
-                }
-                const cartData = localStorage.getItem('cart-info');
-                const reqData = {
-                    cartItemsString: cartData + ''
-                }
-                const createCartDataReq = await fetch('https://knu-api.vercel.app/cart/create-cart-info', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(reqData)
-                });
-
-                if(!createCartDataReq.ok) {
-                    alert('Fail to add the item into your shopping cart!');
-                } else {
-                    const createCartDataRes = await createCartDataReq.json();
-
-                    const cartData = createCartDataRes.cartItemsString;
-                    localStorage.setItem('cart-info', cartData);
-                }
-                
-            })
-        });
+    hideAddToCartBtn(getAddToCartBtn, true);
+    setTimeout(() => {
+        hideAddToCartBtn(getAddToCartBtn, false);
+    }, 2500);
+    const getProductReq = await fetch(`https://knu-api.vercel.app/product/${productId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const getProductRes = await getProductReq.json();
+    const productInfo = getProductRes;
+    const productObj = {
+        productId: productInfo.id,
+        productName: productInfo.productName,
+        imageUrl: productInfo.imageUrl,
+        quantity: 1,
+        price: productInfo.price,
+        totalPrice: productInfo.price
     }
-}
 
+    const cartInfo = JSON.parse(localStorage.getItem('cart-info'));
+    if(cartInfo) {
+        updateCartData(productObj, cartInfo);
+    } else {
+        let cartInfo = [];
+        cartInfo.push(productObj);
+        localStorage.setItem("cart-info", JSON.stringify(cartInfo));
+    }
+    const cartData = localStorage.getItem('cart-info');
+    const reqData = {
+        cartItemsString: cartData + ''
+    }
+    const createCartDataReq = await fetch('https://knu-api.vercel.app/cart/create-cart-info', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reqData)
+    });
+
+    if(!createCartDataReq.ok) {
+        alert('Fail to add the item into your shopping cart!');
+    } else {
+        const createCartDataRes = await createCartDataReq.json();
+
+        const cartData = createCartDataRes.cartItemsString;
+        localStorage.setItem('cart-info', cartData);
+    }
+    
+}
 function hideAddToCartBtn(btnArray, check) {
     btnArray.forEach((btn) => {
         btn.style.display = check ? 'none' : 'block';
