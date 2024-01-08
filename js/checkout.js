@@ -21,15 +21,15 @@ async function checkout() {
         "Quận 10": "25000",
         "Quận 11": "30000",
         "Quận 12": "40000",
-        "Thủ Đức": "45000",
+        "Thành phố Thủ Đức": "45000",
         "Gò Vấp": "35000",
         "Phú Nhuận": "25000",
         "Tân Bình": "30000",
         "Tân Phú": "30000",
         "Bình Tân": "30000",
-        "Nhà Bè": "70000",
-        "Hóc Môn": "40000",
-        "Bình Chánh": "40000",
+        "Huyện Nhà Bè": "70000",
+        "Huyện Hóc Môn": "40000",
+        "Huyện Bình Chánh": "40000",
         "Bình Thạnh": "30000"
       }
     const name = document.querySelector("#name").value;
@@ -59,7 +59,7 @@ async function checkout() {
         shippingAddress: getAddress,
         shippingMethod: shippingMethod,
         paymentMethod: 'COD',
-        totalAmount: totalAmount + shippingFee
+        totalAmount: totalAmount + shippingFee ? shippingFee : 0
     }
 
     const createOrderReq = await fetch('https://knu-api.vercel.app/order', {
