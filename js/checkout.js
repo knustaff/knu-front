@@ -22,15 +22,15 @@ async function checkout() {
         "Quận 11": "30000",
         "Quận 12": "40000",
         "Thành phố Thủ Đức": "45000",
-        "Gò Vấp": "35000",
-        "Phú Nhuận": "25000",
-        "Tân Bình": "30000",
-        "Tân Phú": "30000",
-        "Bình Tân": "30000",
+        "Quận Gò Vấp": "35000",
+        "Quận Phú Nhuận": "25000",
+        "Quận Tân Bình": "30000",
+        "Quận Tân Phú": "30000",
+        "Quận Bình Tân": "30000",
         "Huyện Nhà Bè": "70000",
         "Huyện Hóc Môn": "40000",
         "Huyện Bình Chánh": "40000",
-        "Bình Thạnh": "30000"
+        "Quận Bình Thạnh": "30000"
       }
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
