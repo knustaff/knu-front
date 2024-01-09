@@ -10,8 +10,11 @@ Author: @_vipooo_ /frontend/
 	font-family: 'Montserrat', sans-serif;
 }
 .site-link{
-	margin-top: 12px;
+	margin-top: 13px;
 	font-size: 13px;
+}
+.main-title{
+	font-weight: 650;
 }
 .p-5{
 	height: 500px;
@@ -70,6 +73,7 @@ Author: @_vipooo_ /frontend/
 	color: #000;
 	
 }
+
 @media (min-width: 991px) {
 	.nav-link::before{
 		content: "";
@@ -503,6 +507,3 @@ th:last-child{
 	cursor: pointer;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-#knu-list-products-by-category .knu-categoty-title {
-	text-transform: uppercase;
-  }
