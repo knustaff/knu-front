@@ -157,7 +157,7 @@ async function addToCart(productId) {
     });
 
     if(!createCartDataReq.ok) {
-        alert('Fail to add the item into your shopping cart!');
+        alert('Vui lòng ĐĂNG NHẬP trước khi thêm vào giỏ hàng!');
     } else {
         const createCartDataRes = await createCartDataReq.json();
 
