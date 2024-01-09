@@ -52,6 +52,23 @@ Author: @_vipooo_ /frontend/
 	color: #fff;
 	background-color: #ff7634;
 }
+.logout-button{
+	background-color: #fff;
+	color: #ff7634;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 8px 17px;
+	margin-right: 5px;
+	border-radius: 50px;
+	border: 2px solid #ff7634;
+	text-decoration: none;
+	transition: 0.3s background-color;	
+	
+}
+.logout-button:hover{
+	color: #fff;
+	background-color: #ff7634;
+}
 .navbar-toggler{
 	border: none;
 	font-size: 1.25rem;
