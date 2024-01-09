@@ -49,30 +49,31 @@ async function getProductDataThenDisplay(categories) {
                         `;
 
             products.forEach((product) => {
-                content += `<div class="col-6 col-sm-6 col-md-4 col-lg-3 mt-2" alt="sku001">
+                content += `<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2" alt="sku-sp">
 				    <div id="${product.id}" class="product-card card">
 					    <div class="card-body">
-						    <div class="card-img-actions">
-						    <img src="${product.imageUrl}" class="card-img img-fluid" alt="">
-					    </div>
-					    </div>
-					    <div class="card-body mt-0">
-						    <h5 class="title-spp mb-0">
-						        <a href="#">${product.productName}</a>
-						    </h5>
-						    <h7 class="mb-0 subprice">${product.originalPrice ? convertCurrency(product.originalPrice) : ''}</h7>
-						    <h4 class="mb-0 mainprice">${convertCurrency(product.price)}</h4>
-						    <div style="font-size: 12px; color: #121212;">${product.productDescription}</div>
-						    <div class="flex-container mt-2">
-							    <div>
-								    <i class="fa fa-star star mr-0"> 4/5</i>
-								    <div class="mb-1 text-soluong"><strong>155K</strong> đã bán</div>
-							    </div>
-							    <button type="button" class="btn knu-add-to-cart" product-id="${product.id}" onclick="addToCart(${product.id})">
-								    <i class="fa fa-cart-plus"></i>
-							    </button>
-						    </div>
-					    </div>
+					   <div class="card-img-actions">
+						   <img src="${product.imageUrl}" class="card-img" alt="">
+					   </div>
+					   <div>
+						   <h5 class="title-spp mb-0 mt-2">
+							  <a href="#">${product.productName}</a>
+						   </h5>
+						   <div class="mb-0 subprice">${product.originalPrice ? convertCurrency(product.originalPrice) : ''}</div>
+						   <div class="mb-0 mainprice">${convertCurrency(product.price)}</div>
+						   <!--div class="card-subtitle">${product.productDescription}</div> -->
+					   </div>
+					   <div class="flex-container mt-1">
+						   <div>
+							   <i class="fa fa-star star mr-0"> 4/5</i>
+							   <div class="mb-1 text-soluong"><strong>15,4K</strong> đã bán</div>
+						   </div>				   
+						   <button type="button" class="btn bg-cart" product-id="${product.id}" onclick="addToCart(${product.id})">
+							   <i class="fa fa-cart-plus fa-xl"></i>
+						   </button>
+					   </div>
+				   </div>
+		
                     </div>
                 </div>
             `
