@@ -44,7 +44,7 @@ async function getProductDataThenDisplay(categories) {
             const products = await getProducts.json();
 
             content += `<div class="container mt-5">
-                            <h2 class="pb-2 border-bottom knu-categoty-title">${category.categoryName}</h2>
+                            <h2 class="pb-2 border-bottom main-title knu-categoty-title">${category.categoryName}</h2>
                             <div class="row mt-3">
                         `;
 
