@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function fillCart() {
     const getCartInfo = localStorage.getItem('cart-info');
     if(!getCartInfo || getCartInfo == '' || !getCartInfo.length) {
-        console.log('Giỏ hàng trống');
-        alert('Giỏ hàng trống');
+        console.log('Cart empty');
+        alert('Cart empty');
     } else {
         let content = `<table>
         <tr>
