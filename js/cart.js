@@ -39,7 +39,7 @@ function fillCart() {
 						<a class="knu-delete-item" knt-delete-item-id="${product.productId}" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
 					</div>
 				</td>
-				<td><input type="number" knt-cart-item-id="${product.productId}" value="${product.quantity}"></td>
+				<td class="quantity"><input type="number" knt-cart-item-id="${product.productId}" value="${product.quantity}"></td>
 				<td>${convertCurrency(product.totalPrice)}</td>
 			</tr>
         `

@@ -9,6 +9,62 @@ Author: @_vipooo_ /frontend/
 *{
 	font-family: 'Montserrat', sans-serif;
 }
+.blog-theme{
+	background-color: #fff;
+	height: 1200px;
+}
+.blog-content{
+	background-color: #fff;
+	
+}
+.blog-typing{
+	padding-left: 15px;
+}
+.blog-subtitle{
+	font-style: oblique;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+.blog-credit{
+	font-size: 14px;
+	color: #929292;
+}
+.blog-title{
+	padding-top: 20px;
+	font-weight: 700;
+	font-size: 35px;
+}
+.blog-title-chap-2{
+	font-weight: 600;
+}
+.blog-title-chap{
+	font-weight: 700;
+	font-size: 17px;
+}
+.blog-quangcao{
+	align-content: center;
+	text-align: center;
+	margin-top: 135px;
+	
+}
+.blog-quangcao img{
+		width: 85%;
+	padding-bottom: 20px;
+
+}
+.blog-list-thumbnail img{
+	width: 100%;
+}
+.blog-list-title{
+	font-size: 18px;
+	font-weight: 700;
+}
+.blog-list-subtitle{
+	font-size: 13px;
+	color: #A0A0A0;	
+	
+}
 .site-link{
 	margin-top: 13px;
 	font-size: 13px;
