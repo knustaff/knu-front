@@ -97,6 +97,14 @@ Author: @_vipooo_ /frontend/
 	color: #A0A0A0;	
 	
 }
+.promotion-items{
+	align-content: center;
+	text-align: center;
+	padding: 10px 0;
+}
+.promotion-items img{
+	width: 100%;
+}
 .site-link{
 	margin-top: 13px;
 	font-size: 13px;
